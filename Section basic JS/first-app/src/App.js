@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Counter from './components/Counter';
+import ChangeBorderByRange from './Homework/ChangeBorderByRange';
 
 function App() {
   return (
     <div>
-     <Counter />
+     <ChangeBorderByRange>
     </div>
   );
 }
