@@ -4,14 +4,15 @@ import React, {useState} from 'react';
 // import Counter from './ReactFrom_A_To_Z/Counter';
 // import PostList from './ReactFrom_A_To_Z/PostList';
 import './App.css'
-import AddNewPost_WithInd_UI from './ReactFrom_A_To_Z/AddNewPost_WithInd_UI';
+import AddNewPost from './ReactFrom_A_To_Z/AddNewPost';
+import AddNewPost_WithInd_UI from './ReactFrom_A_To_Z/AddNewPost';
 
 function App() {
 
   return (
     <div className="App">
 
-        <AddNewPost_WithInd_UI />
+        <AddNewPost/>
 
     </div>
   );

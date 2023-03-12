@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import PostItem from './PostItem'
 
-export default function PostList() {
+export default function PostList({newPost}) {
   const [posts, setPosts] = useState([
     {id: 1, title: 'Javascript', body: 'Description'},
     {id: 1, title: 'Javascript', body: 'Description'},
@@ -18,6 +18,8 @@ export default function PostList() {
                 <PostItem post={post}/>
             )
         }
+        if (newPost != null)
+          <PostItem post={newPost}/>
         
     </div>
   )
