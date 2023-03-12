@@ -1,5 +1,4 @@
 * {
-<<<<<<< HEAD
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -21,26 +20,5 @@
   justify-content: space-between;
   align-items: center;
   border: 2px solid teal;
-=======
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
 }
 
-#root {
-    display: flex;
-    justify-content: center;
-}
-
-.App {
-    width: 800px;
-}
-
-.post {
-    margin: 15px;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid teal;
->>>>>>> a980aa47647b39e0e5e7fea2983da65e826f0456
-}

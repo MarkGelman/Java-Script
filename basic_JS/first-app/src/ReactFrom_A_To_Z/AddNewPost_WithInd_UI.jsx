@@ -1,7 +1,7 @@
 import React from 'react'
 import PostList from './PostList'
 import MyButton from './UI/button/MyButton'
-import MyInput from './UI/Input/MyInput'
+import MyInput from './UI/input/MyInput'
 
 export default function AddNewPost() {
   return (
