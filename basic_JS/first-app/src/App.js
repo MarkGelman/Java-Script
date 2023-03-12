@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import React, {useState} from 'react';
 import './App.css';
@@ -23,6 +24,23 @@ function App() {
       </div>
     </>
     
+=======
+import React, {useState} from 'react';
+// import ClassCounter from './ReactFrom_A_To_Z/ClassCounter';
+// import Counter from './ReactFrom_A_To_Z/Counter';
+import PostList from './ReactFrom_A_To_Z/PostList';
+import './App.css'
+import AddNewPost from './ReactFrom_A_To_Z/AddNewPost';
+
+function App() {
+
+  return (
+    <div className="App">
+
+        <AddNewPost />
+
+    </div>
+>>>>>>> a980aa47647b39e0e5e7fea2983da65e826f0456
   );
 }
 
