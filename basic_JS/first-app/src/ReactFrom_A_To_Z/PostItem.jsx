@@ -1,17 +1,17 @@
 
 import React from 'react'
 
-export default function PostItem({post}) {
+export default function PostItem(props) {
   return (
     <>
         <div className="post">
         
             <div className="post__content">
 								
-                <strong>{post.id}. {post.title}</strong>
+                <strong>{props.number}. {props.post.title}</strong>
                 <div>
 
-                    {post.body}
+                    {props.post.body}
                 </div>
             </div>
             <div className="post__btns">

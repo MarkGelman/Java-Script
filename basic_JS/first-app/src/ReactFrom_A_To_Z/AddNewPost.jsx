@@ -3,17 +3,18 @@ import PostList from './PostList'
 import MyButton from './UI/button/MyButton'
 import MyInput from './UI/input/MyInput'
 
-export default function AddNewPost() {
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
+export default function AddNewPost(props) {  
+    const [post, setPost] = useState({title: '', body: ''})
 
-    const NewPost = () => {
+    const addNewPost = (e) => {
+        e.preventDefault();
+
         const newPost = {
-            id: Date.Now,
-            title,
-            body
+            ...post, 
+            id: Date.now()
         }
-        setPost
+        props.create(newPost)
+        setPost({title: '', body: ''})
     }
 
   return (
@@ -21,15 +22,20 @@ export default function AddNewPost() {
         <form>
 
             <MyInput 
-                value = {title}
-                onChange = {e=>setTitle(e.target.value)}
+                value = {post.title}
+                onChange = {e=>setPost({...post, title:e.target.value})}
                 type="text" 
                 placeholder="Название поста"
             />
-            <MyInput type="text" placeholder="Описание поста"/>
-            <MyButton >Создать пост</MyButton>
+            <MyInput
+                value = {post.body}
+                onChange = {e =>setPost({...post, body:e.target.value})} 
+                type="text" 
+                placeholder="Описание поста"
+            />
+            <MyButton onClick = {addNewPost}>Создать пост</MyButton>
         </form>
-      <PostList/>
+         <PostList/> 
     </div>
   )
 }
