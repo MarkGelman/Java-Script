@@ -3,17 +3,16 @@ import PostList from './PostList'
 import MyButton from './UI/button/MyButton'
 import MyInput from './UI/input/MyInput'
 
-export default function AddNewPost(props) {  
+export default function AddNewPost({create}) {  
     const [post, setPost] = useState({title: '', body: ''})
 
     const addNewPost = (e) => {
         e.preventDefault();
-
         const newPost = {
             ...post, 
             id: Date.now()
         }
-        props.create(newPost)
+        create(newPost)
         setPost({title: '', body: ''})
     }
 
@@ -35,7 +34,6 @@ export default function AddNewPost(props) {
             />
             <MyButton onClick = {addNewPost}>Создать пост</MyButton>
         </form>
-         <PostList/> 
     </div>
   )
 }
