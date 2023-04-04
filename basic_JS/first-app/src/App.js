@@ -26,6 +26,8 @@ function App() {
 
     <div className="App">
       <AddNewPost create={createPost} />
+      <hr style={{margin: 15}}/>
+      <MySelect
       {posts.length != 0
         ?
         <PostList remove={removePost} listPosts={posts} title="Посты про JS" />
