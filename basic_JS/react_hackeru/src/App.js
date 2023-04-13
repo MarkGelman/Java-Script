@@ -1,16 +1,16 @@
 
 import './App.css';
-import Cards from './cards/Cards';
-import CardsPage from './pages/CardsPage';
-import PageAbout from './pages/PageAbout';
-import BusinessCard from './cards/card/BusinessCard';
+import Layout from './layout/Layout';
+import Router from './routes/Router';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div >
-      <CardsPage />
-      {/* <PageAbout /> */}
-    </div>
+    <BrowserRouter>
+     <Layout>
+        <Router/>
+     </Layout>
+    </BrowserRouter>
   );
 }
 

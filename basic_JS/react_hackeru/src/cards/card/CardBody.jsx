@@ -1,7 +1,16 @@
 import { CardContent, CardHeader, Divider, Typography } from '@mui/material';
 import React from 'react';
+import { addressType } from '../../models/adressType';
+import { string, number } from "prop-types";
 
-function CardBody({phone, address, bizNumber, title, subtitle}) {
+function CardBody ({
+        phone, 
+        address, 
+        bizNumber, 
+        title, 
+        subtitle
+    }) 
+{
     return (
         <>
             <CardHeader 
@@ -34,6 +43,15 @@ function CardBody({phone, address, bizNumber, title, subtitle}) {
             </CardContent>
         </>
     );
+}
+
+CardBody.prototype ={
+    adress: addressType.isRequired,
+    phone: string.isRequired, 
+    bizNumber: number, 
+    title: string.isRequired, 
+    subtitle: string.isRequired
+
 }
 
 export default CardBody;
