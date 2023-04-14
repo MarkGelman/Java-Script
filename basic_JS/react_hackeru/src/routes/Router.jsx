@@ -15,6 +15,7 @@ import SandBox from '../sandbox/SandBox';
 import FirsComponent from '../sandbox/components/FirsComponent';
 import SecondComponent from '../sandbox/components/SecondComponent';
 import LifeCycle from '../sandbox/components/LifeCycle';
+import Country from '../sandbox/components/Country';
 
 function Router(props) {
     return (
@@ -34,6 +35,7 @@ function Router(props) {
                 <Route path="first" element={<FirsComponent />} />
                 <Route path="second" element={<SecondComponent />} />
                 <Route path="life-cycle" element={<LifeCycle />} />
+                <Route path="country" element={<Country />} />
             </Route>
             <Route path='*' element={<ErrorPage/>} />
             

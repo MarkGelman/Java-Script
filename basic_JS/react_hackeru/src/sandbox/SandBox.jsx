@@ -11,6 +11,7 @@ function SandBox(props) {
                     <NavItem to='first' label='FirstComp' sx={{color: 'black'}}/>
                     <NavItem to='second' label='SecondComp' sx={{color: 'black'}}/>
                     <NavItem to='life-cycle' label='LifeCycle' sx={{color: 'black'}}/>
+                    <NavItem to="country" label="Country" sx={{color: 'black'}}/>
                 </Toolbar>
             </AppBar>
             <Container>
