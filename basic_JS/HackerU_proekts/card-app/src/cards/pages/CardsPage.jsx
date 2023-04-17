@@ -1,110 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Cards from '../Cards';
+import axios from 'axios';
 
 function CardsPage(props) {
-    const cards = [
-        {
-            id: "eafeswfwr2326346tf3254f",
-            title: "first",
-            subtitle: "subTitle",
-            description: "testing",
-            phone: "050-1111111",
-            email: "text@text.com",
-            web: "https://www.test.co.il",
-            image: {
-                url: "assets/images/business-card-top-image.jpg",
-                alt: "image",
-            },
-            address: {
-                state: "TLV",
-                country: "Israel",
-                street: "Dizingof",
-                houseNumber: 1,
-                city: "Tel Aviv",
-                zip: 1312,},
-                bizNumber: 1111111,
-                likes: [],
-                user_id: "4235234234mfnjrb2h3vbry23",
-            },
-            {
-                id: "daslfjhbasfjba123124123",
-                title: "second",
-                subtitle: "subTitle",
-                description: "testing",
-                phone: "050-1111111",
-                email: "text@text.com",
-                web: "https://www.test.co.il",
-                image: {
-                    url: "assets/images/business-card-top-image.jpg",
-                    alt: "image",
-                },
-                address: {
-                    state: "TLV",
-                    country: "Israel",
-                    street: "Dizingof",
-                    houseNumber: 2,
-                    city: "Tel Aviv",
-                    zip: 1312,},
-                    bizNumber: 1111111,
-                    likes: [],
-                    user_id: "4235234234mfnjrb2h3vbry24",
-                },
-                {
-                    id: "daslfjhbasfjba123124236",
-                    title: "third",
-                    subtitle: "subTitle",
-                    description: "testing",
-                    phone: "050-1111111",
-                    email: "text@text.com",
-                    web: "https://www.test.co.il",
-                    image: {
-                        url: "assets/images/business-card-top-image.jpg",
-                        alt: "image",
-                    },
-                    address: {
-                        state: "TLV",
-                        country: "Israel",
-                        street: "Dizingof",
-                        houseNumber: 2,
-                        city: "Tel Aviv",
-                        zip: 1312,},
-                        bizNumber: 1111111,
-                        likes: [],
-                        user_id: "4235234234mfnjrb2h3vbry25",
-                },
-                {
-                    id: "daslfjhbasfjba123124431",
-                    title: "four",
-                    subtitle: "subTitle",
-                    description: "testing",
-                    phone: "050-1111111",
-                    email: "text@text.com",
-                    web: "https://www.test.co.il",
-                    image: {
-                        url: "assets/images/business-card-top-image.jpg",
-                        alt: "image",
-                    },
-                    address: {
-                        state: "TLV",
-                        country: "Israel",
-                        street: "Dizingof",
-                        houseNumber: 2,
-                        city: "Tel Aviv",
-                        zip: 1312,},
-                        bizNumber: 1111111,
-                        likes: [],
-                        user_id: "4235234234mfnjrb2h3vbry26",
-                }
-    ];
+    const [cards, setCards] = useState([]);
+
+    useEffect (
+        () => {getCardsFromAPI();},  
+    [])
+
+    const getCardsFromAPI = async () => {
+        try {
+            //net::ERR_SSL_PROTOCOL_ERROR
+            const { data } = await axios.get("http://localhost:8181/cards");
+            console.log(data);
+            setCards(data)
+        } 
+        catch (error) {
+            console.log('error.message');
+        }
+    };
+  
     return (
         <>
-           {/* <Container sx={{ mt: 2}}>  */}
-                <PageHeader
+           {
+           /* <Container sx={{ mt: 2}}
                     title='Cards'
                     subtitle='On this page you can find all business cards from all categories'
                 />
-            {/* </Container>  */}
+            </Container> */}
             <Cards cards = {cards}/>
         </>
     );
