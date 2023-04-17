@@ -16,6 +16,8 @@ import FirsComponent from '../sandbox/components/FirsComponent';
 import SecondComponent from '../sandbox/components/SecondComponent';
 import LifeCycle from '../sandbox/components/LifeCycle';
 import Country from '../sandbox/components/Country';
+import Memoization from '../sandbox/components/Memoization';
+import MyCounter from '../sandbox/components/MyCounter';
 
 function Router(props) {
     return (
@@ -36,6 +38,8 @@ function Router(props) {
                 <Route path="second" element={<SecondComponent />} />
                 <Route path="life-cycle" element={<LifeCycle />} />
                 <Route path="country" element={<Country />} />
+                <Route path="memo" element={<Memoization />} />
+                <Route path="counter" element={<MyCounter />} />
             </Route>
             <Route path='*' element={<ErrorPage/>} />
             
