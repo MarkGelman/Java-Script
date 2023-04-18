@@ -6,8 +6,8 @@ import CardHead from './CardHead';
 import CardBody from './CardBody';
 import CardActionBar from "./CardActionBar";
 import {func} from "prop-types";
-import { cardType } from "../models/cardType";
-import ROUTES from "../../routes/routesModel";
+import { cardType } from "../../models/cardType";
+import ROUTES from "../../../routes/routesModel";
 import { useNavigate } from "react-router-dom";
 
 function  BusinessCard ({card, handleDelete, handleEdit, handleLike}) {

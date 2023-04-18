@@ -1,6 +1,6 @@
 import { CardContent, CardHeader, Divider, Typography } from '@mui/material';
 import React from 'react';
-import { addressType } from '../models/adressType';
+import { addressType } from '../../models/adressType';
 import { string, number } from "prop-types";
 
 function CardBody ({
