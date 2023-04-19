@@ -10,7 +10,6 @@ export default function useCards() {
 
     const handleGetCards = async () => {
         try {
-            //net::ERR_SSL_PROTOCOL_ERROR
             const cards  = await getCards();
             setIsLoading(false);
             setCards(cards)

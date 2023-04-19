@@ -4,7 +4,7 @@ const apiUrl = "http://localhost:8181";
 
 export const getCards = async () => {
     try {
-        const {data} = await axios.get(`${apiUrl}/cards`);
+        const {data} = await axios.get("http://localhost:8181/cards");
         return data;
 
     }catch(error) {

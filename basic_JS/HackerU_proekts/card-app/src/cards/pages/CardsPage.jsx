@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Cards from '../components/Cards';
-import axios from 'axios';
 import Spinner from '../../components/Spinner';
 import Error from '../../components/Error';
-import { InfoOutlined } from '@mui/icons-material';
 import useCards from '../hooks/useCards';
 import { Container, Typography } from '@mui/material';
+import CardsFeedback from '../components/CardsFeedback';
 
 function CardsPage(props) {
   
@@ -16,14 +15,7 @@ function CardsPage(props) {
         handleGetCards();
     },[]);
 
-    if(isLoading) return <Spinner />;
-    if (error) return <Error errorMessage={error}/>; 
-    if (cards && cards.length === 0) return (
-        <Typography m= {2}>
-            Oops... it seems there are no business cards to display
-        </Typography>
-    )
-    if(cards)
+   
         return (
             <>
                 <Container sx={{ mt: 2}} >
@@ -31,8 +23,8 @@ function CardsPage(props) {
                         title='Cards'
                         subtitle='On this page you can find all business cards from all categories'
                     />
+                    <CardsFeedback cards={cards} isLoading={isLoading} error={error}/>
                 </Container> 
-                <Cards cards = {cards}/>
             </>
         );
     

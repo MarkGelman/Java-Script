@@ -40,6 +40,7 @@ function Router(props) {
                 <Route path="country" element={<Country />} />
                 <Route path="memo" element={<Memoization />} />
                 <Route path="counter" element={<MyCounter />} />
+                <Route path="grand" element={<grandComponent />} />
             </Route>
             <Route path='*' element={<ErrorPage/>} />
             
